@@ -1,0 +1,40 @@
+{
+  "name": "yarn3-typescript4.5-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "author": "Billy Vong <billy@sentry.io>",
+  "license": "BSL",
+  "repository": "",
+  "homepage": "",
+  "bugs": "",
+  "main": "lib/index",
+  "keywords": [],
+  "scripts": {
+    "build": "yarn tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "knex": "^0.95.12",
+    "typescript": "^4.5.0"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "volta": {
+    "node": "14.15.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "yarn test --findRelatedTests"
+    ],
+    "*.md": [
+      "markdownlint"
+    ]
+  }
+}
